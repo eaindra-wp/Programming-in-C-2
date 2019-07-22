@@ -1,0 +1,13 @@
+CC = gcc
+CFLAGS = -Wall
+OBJ = 5.o
+
+all : 5
+
+5: $(OBJ) 
+	$(CC) $(CFLAGS) -o 5 $(OBJ) 
+5.o: 5.c
+	$(CC) $(CFLAGS) -c 5.c
+
+clean: 
+	rm -f all *.o

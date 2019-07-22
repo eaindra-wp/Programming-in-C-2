@@ -1,0 +1,34 @@
+#JTSK-320112
+#a4-p1.c
+#Eaindra Wun Pyae
+#e.wunpyae@jacobs-university.de
+
+cc = gcc
+cflags  = -Wall
+object = linked_list.o use_linked_list.o
+#name declarations
+
+#connect with main file
+all: main
+
+#link the objects
+#main: $(object)
+#	$ (cc) $ (cflags) -o all $(object)
+	
+#for function file
+linked_list.o: linked_list.h linked_list.c
+	gcc -Wall -c linked_list.c
+
+#for main function
+use_linked_file.o: linked_list.h use_linked_list.c
+	gcc -Wall -c use_linked_list.c
+	
+compileonly: linked_list.o  use_linked_list.o
+
+#delete_o:
+	rm -f*.o
+#delete_exc:
+	rm -f main
+#clean the target
+cleanall: 
+	rm -f use_linked_list*.o
